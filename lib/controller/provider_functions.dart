@@ -75,4 +75,11 @@ class ContactProvider extends ChangeNotifier {
         .toList();
     notifyListeners();
   }
+
+  clear() {
+    nameController.clear();
+    emailController.clear();
+    phoneController.clear();
+    addressController.clear();
+  }
 }

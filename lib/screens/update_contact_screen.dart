@@ -43,52 +43,54 @@ class _UpdateContactScreenState extends State<UpdateContactScreen> {
           ),
         ),
       ),
-      body: Center(
-        child: Consumer<ContactProvider>(
-          builder: (context, provider, child) {
-            return Column(
-              children: [
-                const SizedBox(height: 40),
-                inputbox(
-                  controller: provider.nameController,
-                  icons: Icons.text_format,
-                  hint: 'Enter Name',
-                ),
-                inputbox(
-                  controller: provider.phoneController,
-                  icons: Icons.phone,
-                  hint: 'Enter PhoneNumber',
-                ),
-                inputbox(
-                  controller: provider.addressController,
-                  icons: Icons.place,
-                  hint: 'Enter Address',
-                ),
-                inputbox(
-                  controller: provider.emailController,
-                  icons: Icons.email,
-                  hint: 'Enter Email',
-                ),
-                const SizedBox(height: 40),
-                ElevatedButton(
-                  onPressed: () {
-                    provider.updateContact(widget.contactId);
-                    Navigator.of(context).pop();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Consumer<ContactProvider>(
+            builder: (context, provider, child) {
+              return Column(
+                children: [
+                  const SizedBox(height: 40),
+                  inputbox(
+                    controller: provider.nameController,
+                    icons: Icons.text_format,
+                    hint: 'Enter Name',
                   ),
-                  child: const Text(
-                    'Update Contacts',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  inputbox(
+                    controller: provider.phoneController,
+                    icons: Icons.phone,
+                    hint: 'Enter PhoneNumber',
+                  ),
+                  inputbox(
+                    controller: provider.addressController,
+                    icons: Icons.place,
+                    hint: 'Enter Address',
+                  ),
+                  inputbox(
+                    controller: provider.emailController,
+                    icons: Icons.email,
+                    hint: 'Enter Email',
+                  ),
+                  const SizedBox(height: 40),
+                  ElevatedButton(
+                    onPressed: () {
+                      provider.updateContact(widget.contactId);
+                      Navigator.of(context).pop();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                    ),
+                    child: const Text(
+                      'Update Contacts',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            );
-          },
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
@@ -102,9 +104,10 @@ Widget inputbox({
 }) =>
     Container(
       margin: const EdgeInsets.all(15),
+      height: 80,
       child: TextField(
         style:
-            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         controller: controller,
         decoration: InputDecoration(
           hintText: hint,
@@ -115,6 +118,8 @@ Widget inputbox({
             icons,
             color: Colors.blue,
           ),
+          filled: true,
+          fillColor: Colors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),

@@ -19,15 +19,15 @@ class ContactModel {
     this.iV,
   });
 
-  ContactModel.fromJson(Map<String, dynamic> json) {
-    sId = json['_id'];
-    name = json['name'];
-    email = json['email'];
-    phone = json['phone'];
-    address = json['address'];
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
-    iV = json['__v'];
+  ContactModel.fromJson(Map<String, dynamic> s) {
+    sId = s['_id'];
+    name = s['name'];
+    email = s['email'];
+    phone = s['phone'];
+    address = s['address'];
+    createdAt = s['createdAt'];
+    updatedAt = s['updatedAt'];
+    iV = s['__v'];
   }
   Map<String, dynamic> toJson() {
     return {

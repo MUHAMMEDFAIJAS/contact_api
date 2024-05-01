@@ -40,7 +40,7 @@ class ContactDetailScreen extends StatelessWidget {
           height: 350,
           width: 350,
           child: Consumer<ContactProvider>(
-            builder: (context, pro, child) {
+            builder: (context, pro, child) {             
               return Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

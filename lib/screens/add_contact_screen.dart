@@ -81,9 +81,10 @@ Widget inputbox({
 }) =>
     Container(
       margin: const EdgeInsets.all(15),
+      height: 80,
       child: TextField(
         style:
-            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         controller: controller,
         decoration: InputDecoration(
           hintText: hint,
@@ -94,6 +95,8 @@ Widget inputbox({
             icons,
             color: Colors.blue,
           ),
+          filled: true,
+          fillColor: Colors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
